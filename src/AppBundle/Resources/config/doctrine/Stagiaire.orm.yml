@@ -1,0 +1,30 @@
+AppBundle\Entity\Stagiaire:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\StagiaireRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        nom:
+            type: string
+            length: '100'
+        prenom:
+            type: string
+            length: '100'
+        telephone:
+            type: string
+            length: '10'
+        dateNaissance:
+            type: date
+
+    manyToMany:
+        competences:
+            targetEntity: Competence
+            mappedBy: stagiaires
+            cascade: ['all']
+
+    lifecycleCallbacks: {  }

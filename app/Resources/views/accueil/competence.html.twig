@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <h1>Création d'une compétence</h1>
+
+    {% for type, messages in app.flashes %}
+        {% for message in messages %}
+            <div class="alert alert-{{ type }}">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endfor %}
+
+    <div class="form-group ">
+        {{ form(formCompetence) }}
+    </div>
+
+
+{% endblock %}
+
+{% block stylesheets %}
+
+{% endblock %}
